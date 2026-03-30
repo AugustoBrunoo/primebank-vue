@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+// view são como pages no github -> onde ficam as páginas
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
