@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch, onUnmounted } from 'vue' // Adicionado onUnmounted
+import { ref, onMounted, watch, onUnmounted } from 'vue' 
 import Chart from 'chart.js/auto'
 import { LineChart } from 'lucide-vue-next' 
 

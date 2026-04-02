@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue' // Faltava importar o ref
+import { ref } from 'vue' 
 import { PlusCircle } from 'lucide-vue-next'
 
 const emit = defineEmits(['adicionar'])

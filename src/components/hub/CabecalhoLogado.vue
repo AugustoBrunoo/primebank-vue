@@ -2,7 +2,6 @@
 import { LogOut } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
 
-// Caso queira que o nome "Aluno FATEC" venha do HubView no futuro:
 defineProps({
     usuario: {
         type: String,
