@@ -5,11 +5,11 @@ import { RouterLink } from 'vue-router'
 defineProps({
     usuario: {
         type: String,
-        default: 'Aluno FATEC'
+        default: 'Pierre Chapetta'
     },
     iniciais: {
         type: String,
-        default: 'AF'
+        default: 'PC'
     }
 })
 </script>

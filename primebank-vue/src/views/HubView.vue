@@ -8,8 +8,9 @@ import GraficoResumo from '../components/hub/GraficoResumo.vue'
 import FormularioTransacao from '../components/hub/FormularioTransacao.vue'
 import ListaTransacoes from '../components/hub/ListaTransacoes.vue'
 
+
 const transactions = ref ([
-    { id: 1, description: 'Salário FATEC', value: 3500.00 },
+    { id: 1, description: 'Salário Monitoria', value: 3500.00 },
     { id: 2, description: 'Aluguel', value: -1200.00 },
     { id: 3, description: 'Supermercado', value: -650.50 },
     { id: 4, description: 'Bolsa Estágio', value: 800.00 },
@@ -21,6 +22,7 @@ const transactions = ref ([
 
 const processedTransactions = computed(() => {
     let accumulator = 0
+
     return transactions.value.map(t => {
         accumulator += Number(t.value)
         return { ...t, balance: accumulator}
@@ -38,7 +40,7 @@ const addTransaction = (nova) => {
         id: Date.now(),
         ...nova
     });
-    currentPage.value = totalPages.value;
+    
 };
 
 const removeTransaction = (id) => {
