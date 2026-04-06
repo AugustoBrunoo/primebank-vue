@@ -1,7 +1,7 @@
 <script setup>
-import Cabecalho from '../components/Cabecalho.vue';
-import ConteudoPrincipal from '../components/ConteudoPrincipal.vue';
-import Rodape from '../components/Rodape.vue';
+import Cabecalho from '../components/home/Cabecalho.vue';
+import ConteudoPrincipal from '../components/home/ConteudoPrincipal.vue';
+import Rodape from '../components/home/Rodape.vue';
 
 
 </script>

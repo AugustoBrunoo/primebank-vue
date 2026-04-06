@@ -83,6 +83,8 @@ const removeTransaction = (id) => {
                     <FormularioTransacao @adicionar="addTransaction" />
                 </div>
                 <div class="lg:col-span-2">
+
+                    <!-- Envia as transações para a lista e a lista pode invocaar o método de remover transações-->
                     <ListaTransacoes 
                         :transacoes="processedTransactions" 
                         @remover="removeTransaction"

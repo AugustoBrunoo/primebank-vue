@@ -7,7 +7,7 @@
                 </div>
                 <span class="font-bold text-lg text-white tracking-tight">PrimeBank</span>
             </div>
-            <p class="mb-4 text-sm">Projeto Acadêmico - Construído com HTML, Tailwind CSS e JS.</p>
+            <p class="mb-4 text-sm">Trabalho 1 (DSW) - Construído em Vue.js 3</p>
             <div class="flex justify-center gap-6 text-sm">
                 <a href="#" class="hover:text-white transition-colors">Sobre</a>
                 <a href="#" class="hover:text-white transition-colors">Termos</a>

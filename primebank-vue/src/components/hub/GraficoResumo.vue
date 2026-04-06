@@ -3,6 +3,7 @@ import { ref, onMounted, watch, onUnmounted } from 'vue'
 import Chart from 'chart.js/auto'
 import { LineChart } from 'lucide-vue-next' 
 
+// Recebe os dados processados do componente pai (HubView)
 const props = defineProps(['dados'])
 const chartCanvas = ref(null)
 let chartInstance = null
@@ -44,13 +45,21 @@ const updateChart = () => {
     }
 }
 
+// --- CICLO DE VIDA ---
+
+// onMounted: O gráfico só pode ser criado após o Vue montar o HTML na tela
+
 onMounted(updateChart)
 
+// onUnmounted: Limpeza de memória. Destruímos o gráfico ao sair da página para evitar problema de memória
 onUnmounted(() => {
     if (chartInstance) {
         chartInstance.destroy()
     }
 })
+
+
+// Monitora a Prop dados. Se uma transação for add/removida, chama updateChart() automaticamente
 
 watch(() => props.dados, updateChart, { deep: true })
 </script>

@@ -6,7 +6,7 @@ import { Trash2, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 // Ele recebe a lista completa (com os saldos já calculados) do componente pai.
 const props = defineProps(['transacoes'])
 
-// Ele prepara o mega-fone para gritar remover caso o usuário clique na lixeira, 
+// Ele prepara para avisar o método remover caso o usuário clique na lixeira, 
 // avisando o pai para deletar aquele item específico.
 
 const emit = defineEmits(['remover'])
