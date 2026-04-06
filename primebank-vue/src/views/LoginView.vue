@@ -30,6 +30,7 @@ const showPassword = ref(false)
 const isLoading = ref(false)
 
 // Função que substitui o antigo eventListener do submit
+
 const handleLogin = async () => {
     isLoading.value = true
 

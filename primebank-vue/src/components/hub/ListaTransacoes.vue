@@ -2,14 +2,23 @@
 import { ref, computed } from 'vue'
 import { Trash2, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
+
+// Ele recebe a lista completa (com os saldos já calculados) do componente pai.
 const props = defineProps(['transacoes'])
+
+// Ele prepara o mega-fone para gritar remover caso o usuário clique na lixeira, 
+// avisando o pai para deletar aquele item específico.
+
 const emit = defineEmits(['remover'])
 
+// Página atual da lista de transação separado em 5 itens
 const currentPage = ref(1)
 const itemsPerPage = 5
 
 const totalPages = computed(() => {
     const total = props.transacoes ? props.transacoes.length : 0
+    // faz o calculo de quantas páginas devem
+
     return Math.max(1, Math.ceil(total / itemsPerPage))
 })
 
@@ -20,6 +29,8 @@ const paginatedTransactions = computed(() => {
     const end = start + itemsPerPage
     return reversed.slice(start, end)
 })
+
+// logica do formato da moeda
 
 const formatCurrency = (value) => {
     return new Intl.NumberFormat('pt-BR', {

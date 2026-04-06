@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+
 // Importando os ícones que você usou na seção de vantagens
 import { Smartphone, TrendingUp, CreditCardIcon, Nfc } from 'lucide-vue-next'
 

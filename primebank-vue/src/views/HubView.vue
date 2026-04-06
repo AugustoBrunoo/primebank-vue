@@ -1,3 +1,5 @@
+<!-- HubView seria um One-Way Data Flow (Fluxo de Dados Unidirecional) -->
+
 <script setup>
 
 import {ref, computed } from 'vue'
@@ -8,6 +10,10 @@ import GraficoResumo from '../components/hub/GraficoResumo.vue'
 import FormularioTransacao from '../components/hub/FormularioTransacao.vue'
 import ListaTransacoes from '../components/hub/ListaTransacoes.vue'
 
+// Mini banco de dados (dados brutos) com transações já prontas
+
+// !=s entre computed e ref = ref (trabalha cm dados brutos) e computed com calculo 
+// manipulando dados brutos
 
 const transactions = ref ([
     { id: 1, description: 'Salário Monitoria', value: 3500.00 },
@@ -20,22 +26,36 @@ const transactions = ref ([
     { id: 8, description: 'Pix Recebido', value: 150.00 },     
 ])
 
+// Monitoramento Automático (Reatividade)
+
+// computed é um método retornável, deve sempre retorna algo
+
 const processedTransactions = computed(() => {
+    // o acumulador é zerado apenas uma vez por recálculo.
+
     let accumulator = 0
 
     return transactions.value.map(t => {
+        // O loop (map) gira várias vezes e acumulador se lembra do valor da volta anterior
         accumulator += Number(t.value)
         return { ...t, balance: accumulator}
     })
 })
 
-const saldoFinal = computed(() => {               
+const saldoFinal = computed(() => {           
+    // A lista de transações processadas tem alguma coisa dentro dela? (length > 0)
+
     return processedTransactions.value.length > 0
+    // SE SIM (?), vá na lista processada, pegue a última linha (length - 1) 
+    // e olhe o valor da etiqueta "balance"
+
     ? processedTransactions.value[processedTransactions.value.length - 1].balance
+    // se não zera o saldo.
     : 0
 })
 
 const addTransaction = (nova) => {
+
     transactions.value.push({
         id: Date.now(),
         ...nova

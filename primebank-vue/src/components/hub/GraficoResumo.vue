@@ -37,7 +37,7 @@ const updateChart = () => {
                 responsive: true, 
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false } // Opcional: esconde a legenda para ficar mais limpo
+                    legend: { display: false }
                 }
             }
         })

@@ -1,5 +1,7 @@
 <script setup>
 
+// pega a propriedade injetada no componente pai
+
 const props = defineProps(['saldoFinal'])
 
 const formatCurrency = (value) => {
